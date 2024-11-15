@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD635B3A2C413B3B008308B0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD635B392C413B3B008308B0 /* Product.swift */; };
+		AD683A1C2C1C4AE800EBE60B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD683A1B2C1C4AE800EBE60B /* HomeViewController.swift */; };
+		AD683A1E2C1C4B0100EBE60B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD683A1D2C1C4B0100EBE60B /* CameraViewController.swift */; };
+		AD683A202C1C4B1B00EBE60B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD683A1F2C1C4B1B00EBE60B /* SettingViewController.swift */; };
+		AD9A0D522C8C79CB00E4AB63 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A0D512C8C79CB00E4AB63 /* DetailViewController.swift */; };
+		ADA184A52C2590E8003F5B87 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA184A42C2590E8003F5B87 /* CheckViewController.swift */; };
+		ADA184A82C259BD6003F5B87 /* GoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA184A62C259BD6003F5B87 /* GoodsTableViewCell.swift */; };
+		ADA184A92C259BD6003F5B87 /* GoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA184A72C259BD6003F5B87 /* GoodsTableViewCell.xib */; };
+		ADC39FEB2C53B77600CDE173 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC39FEA2C53B77600CDE173 /* DataViewController.swift */; };
+		ADC9F5AB2C5CDAB800F9E22C /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9F5AA2C5CDAB800F9E22C /* NoticeViewController.swift */; };
+		ADCF91EE2C1318AF0092256F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCF91ED2C1318AF0092256F /* AppDelegate.swift */; };
+		ADCF91F02C1318AF0092256F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCF91EF2C1318AF0092256F /* SceneDelegate.swift */; };
+		ADCF91F22C1318AF0092256F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCF91F12C1318AF0092256F /* ViewController.swift */; };
+		ADCF91F52C1318AF0092256F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ADCF91F42C1318AF0092256F /* Base */; };
+		ADCF91F72C1318B50092256F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADCF91F62C1318B50092256F /* Assets.xcassets */; };
+		ADCF91FA2C1318B50092256F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ADCF91F92C1318B50092256F /* Base */; };
+		ADD68D512CA2CF910074E3CB /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD68D502CA2CF910074E3CB /* UserViewController.swift */; };
+		ADD68D532CA2E7650074E3CB /* NoticeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD68D522CA2E7650074E3CB /* NoticeListViewController.swift */; };
+		ADD68D552CA43A530074E3CB /* KitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD68D542CA43A530074E3CB /* KitchenViewController.swift */; };
+		ADD68D572CA43B2A0074E3CB /* NewCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD68D562CA43B2A0074E3CB /* NewCameraViewController.swift */; };
+		ADD68D592CA43B560074E3CB /* SecondCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD68D582CA43B560074E3CB /* SecondCheckViewController.swift */; };
+		ADD68D5B2CA43B870074E3CB /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD68D5A2CA43B870074E3CB /* EntranceViewController.swift */; };
+		ADD68D5D2CA43BA10074E3CB /* PowderRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD68D5C2CA43BA10074E3CB /* PowderRoomViewController.swift */; };
+		ADD68D5F2CA43CC60074E3CB /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD68D5E2CA43CC60074E3CB /* EmergencyViewController.swift */; };
+		C8EAE84FA908111CE7B7CCE2 /* Pods_KAIMEMO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D657227CEB4610F872DC4707 /* Pods_KAIMEMO.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AD635B392C413B3B008308B0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		AD683A1B2C1C4AE800EBE60B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AD683A1D2C1C4B0100EBE60B /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		AD683A1F2C1C4B1B00EBE60B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		AD9A0D512C8C79CB00E4AB63 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ADA184A42C2590E8003F5B87 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
+		ADA184A62C259BD6003F5B87 /* GoodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsTableViewCell.swift; sourceTree = "<group>"; };
+		ADA184A72C259BD6003F5B87 /* GoodsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsTableViewCell.xib; sourceTree = "<group>"; };
+		ADC39FEA2C53B77600CDE173 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		ADC9F5AA2C5CDAB800F9E22C /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		ADCF91EA2C1318AF0092256F /* KAIMEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAIMEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCF91ED2C1318AF0092256F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ADCF91EF2C1318AF0092256F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ADCF91F12C1318AF0092256F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ADCF91F42C1318AF0092256F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ADCF91F62C1318B50092256F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ADCF91F92C1318B50092256F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ADCF91FB2C1318B50092256F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADD68D502CA2CF910074E3CB /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		ADD68D522CA2E7650074E3CB /* NoticeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListViewController.swift; sourceTree = "<group>"; };
+		ADD68D542CA43A530074E3CB /* KitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenViewController.swift; sourceTree = "<group>"; };
+		ADD68D562CA43B2A0074E3CB /* NewCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCameraViewController.swift; sourceTree = "<group>"; };
+		ADD68D582CA43B560074E3CB /* SecondCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCheckViewController.swift; sourceTree = "<group>"; };
+		ADD68D5A2CA43B870074E3CB /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
+		ADD68D5C2CA43BA10074E3CB /* PowderRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowderRoomViewController.swift; sourceTree = "<group>"; };
+		ADD68D5E2CA43CC60074E3CB /* EmergencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
+		C29D6BD669B3DFB088CC7BCA /* Pods-KAIMEMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KAIMEMO.debug.xcconfig"; path = "Target Support Files/Pods-KAIMEMO/Pods-KAIMEMO.debug.xcconfig"; sourceTree = "<group>"; };
+		D657227CEB4610F872DC4707 /* Pods_KAIMEMO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KAIMEMO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F125FA5B4138490752BC3F06 /* Pods-KAIMEMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KAIMEMO.release.xcconfig"; path = "Target Support Files/Pods-KAIMEMO/Pods-KAIMEMO.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ADCF91E72C1318AF0092256F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8EAE84FA908111CE7B7CCE2 /* Pods_KAIMEMO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		294938CEA95B68A7C45E4BBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C29D6BD669B3DFB088CC7BCA /* Pods-KAIMEMO.debug.xcconfig */,
+				F125FA5B4138490752BC3F06 /* Pods-KAIMEMO.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ADCF91E12C1318AF0092256F = {
+			isa = PBXGroup;
+			children = (
+				ADCF91EC2C1318AF0092256F /* KAIMEMO */,
+				ADCF91EB2C1318AF0092256F /* Products */,
+				294938CEA95B68A7C45E4BBC /* Pods */,
+				C871B2FDD34281A01E7A818F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ADCF91EB2C1318AF0092256F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF91EA2C1318AF0092256F /* KAIMEMO.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADCF91EC2C1318AF0092256F /* KAIMEMO */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF91ED2C1318AF0092256F /* AppDelegate.swift */,
+				ADCF91EF2C1318AF0092256F /* SceneDelegate.swift */,
+				ADCF91F12C1318AF0092256F /* ViewController.swift */,
+				ADCF91F32C1318AF0092256F /* Main.storyboard */,
+				ADA184A62C259BD6003F5B87 /* GoodsTableViewCell.swift */,
+				ADA184A72C259BD6003F5B87 /* GoodsTableViewCell.xib */,
+				AD683A1B2C1C4AE800EBE60B /* HomeViewController.swift */,
+				AD9A0D512C8C79CB00E4AB63 /* DetailViewController.swift */,
+				AD683A1D2C1C4B0100EBE60B /* CameraViewController.swift */,
+				ADA184A42C2590E8003F5B87 /* CheckViewController.swift */,
+				AD635B392C413B3B008308B0 /* Product.swift */,
+				ADC39FEA2C53B77600CDE173 /* DataViewController.swift */,
+				ADC9F5AA2C5CDAB800F9E22C /* NoticeViewController.swift */,
+				ADD68D522CA2E7650074E3CB /* NoticeListViewController.swift */,
+				ADD68D502CA2CF910074E3CB /* UserViewController.swift */,
+				ADD68D542CA43A530074E3CB /* KitchenViewController.swift */,
+				ADD68D562CA43B2A0074E3CB /* NewCameraViewController.swift */,
+				ADD68D582CA43B560074E3CB /* SecondCheckViewController.swift */,
+				AD683A1F2C1C4B1B00EBE60B /* SettingViewController.swift */,
+				ADD68D5A2CA43B870074E3CB /* EntranceViewController.swift */,
+				ADD68D5C2CA43BA10074E3CB /* PowderRoomViewController.swift */,
+				ADD68D5E2CA43CC60074E3CB /* EmergencyViewController.swift */,
+				ADCF91F62C1318B50092256F /* Assets.xcassets */,
+				ADCF91F82C1318B50092256F /* LaunchScreen.storyboard */,
+				ADCF91FB2C1318B50092256F /* Info.plist */,
+			);
+			path = KAIMEMO;
+			sourceTree = "<group>";
+		};
+		C871B2FDD34281A01E7A818F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D657227CEB4610F872DC4707 /* Pods_KAIMEMO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ADCF91E92C1318AF0092256F /* KAIMEMO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADCF91FE2C1318B50092256F /* Build configuration list for PBXNativeTarget "KAIMEMO" */;
+			buildPhases = (
+				FF02F014A9480EEAE743525E /* [CP] Check Pods Manifest.lock */,
+				ADCF91E62C1318AF0092256F /* Sources */,
+				ADCF91E72C1318AF0092256F /* Frameworks */,
+				ADCF91E82C1318AF0092256F /* Resources */,
+				12E785BBDB533604584B5443 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KAIMEMO;
+			productName = KAIMEMO;
+			productReference = ADCF91EA2C1318AF0092256F /* KAIMEMO.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADCF91E22C1318AF0092256F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					ADCF91E92C1318AF0092256F = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = ADCF91E52C1318AF0092256F /* Build configuration list for PBXProject "KAIMEMO" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ADCF91E12C1318AF0092256F;
+			productRefGroup = ADCF91EB2C1318AF0092256F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ADCF91E92C1318AF0092256F /* KAIMEMO */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ADCF91E82C1318AF0092256F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADCF91F72C1318B50092256F /* Assets.xcassets in Resources */,
+				ADCF91FA2C1318B50092256F /* Base in Resources */,
+				ADA184A92C259BD6003F5B87 /* GoodsTableViewCell.xib in Resources */,
+				ADCF91F52C1318AF0092256F /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12E785BBDB533604584B5443 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KAIMEMO/Pods-KAIMEMO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KAIMEMO/Pods-KAIMEMO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KAIMEMO/Pods-KAIMEMO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF02F014A9480EEAE743525E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KAIMEMO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADCF91E62C1318AF0092256F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADD68D5B2CA43B870074E3CB /* EntranceViewController.swift in Sources */,
+				AD9A0D522C8C79CB00E4AB63 /* DetailViewController.swift in Sources */,
+				ADCF91F22C1318AF0092256F /* ViewController.swift in Sources */,
+				AD635B3A2C413B3B008308B0 /* Product.swift in Sources */,
+				ADC39FEB2C53B77600CDE173 /* DataViewController.swift in Sources */,
+				AD683A1E2C1C4B0100EBE60B /* CameraViewController.swift in Sources */,
+				ADD68D592CA43B560074E3CB /* SecondCheckViewController.swift in Sources */,
+				ADA184A82C259BD6003F5B87 /* GoodsTableViewCell.swift in Sources */,
+				ADD68D512CA2CF910074E3CB /* UserViewController.swift in Sources */,
+				ADCF91EE2C1318AF0092256F /* AppDelegate.swift in Sources */,
+				ADCF91F02C1318AF0092256F /* SceneDelegate.swift in Sources */,
+				AD683A1C2C1C4AE800EBE60B /* HomeViewController.swift in Sources */,
+				ADD68D552CA43A530074E3CB /* KitchenViewController.swift in Sources */,
+				ADC9F5AB2C5CDAB800F9E22C /* NoticeViewController.swift in Sources */,
+				ADD68D5F2CA43CC60074E3CB /* EmergencyViewController.swift in Sources */,
+				AD683A202C1C4B1B00EBE60B /* SettingViewController.swift in Sources */,
+				ADD68D532CA2E7650074E3CB /* NoticeListViewController.swift in Sources */,
+				ADD68D572CA43B2A0074E3CB /* NewCameraViewController.swift in Sources */,
+				ADD68D5D2CA43BA10074E3CB /* PowderRoomViewController.swift in Sources */,
+				ADA184A52C2590E8003F5B87 /* CheckViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ADCF91F32C1318AF0092256F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADCF91F42C1318AF0092256F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ADCF91F82C1318B50092256F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADCF91F92C1318B50092256F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ADCF91FC2C1318B50092256F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ADCF91FD2C1318B50092256F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ADCF91FF2C1318B50092256F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C29D6BD669B3DFB088CC7BCA /* Pods-KAIMEMO.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FQ92T4F2ZF;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KAIMEMO/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.fujisaki.non.KAIMEMO.20241011;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ADCF92002C1318B50092256F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F125FA5B4138490752BC3F06 /* Pods-KAIMEMO.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FQ92T4F2ZF;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KAIMEMO/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.fujisaki.non.KAIMEMO.20241011;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ADCF91E52C1318AF0092256F /* Build configuration list for PBXProject "KAIMEMO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADCF91FC2C1318B50092256F /* Debug */,
+				ADCF91FD2C1318B50092256F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADCF91FE2C1318B50092256F /* Build configuration list for PBXNativeTarget "KAIMEMO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADCF91FF2C1318B50092256F /* Debug */,
+				ADCF92002C1318B50092256F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ADCF91E22C1318AF0092256F /* Project object */;
+}
