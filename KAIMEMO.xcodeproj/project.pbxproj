@@ -17,9 +17,9 @@
 		ADA184A92C259BD6003F5B87 /* GoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA184A72C259BD6003F5B87 /* GoodsTableViewCell.xib */; };
 		ADC39FEB2C53B77600CDE173 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC39FEA2C53B77600CDE173 /* DataViewController.swift */; };
 		ADC9F5AB2C5CDAB800F9E22C /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9F5AA2C5CDAB800F9E22C /* NoticeViewController.swift */; };
+		ADCB61302CF9C23B00654CF2 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB612F2CF9C23B00654CF2 /* UIViewController.swift */; };
 		ADCF91EE2C1318AF0092256F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCF91ED2C1318AF0092256F /* AppDelegate.swift */; };
 		ADCF91F02C1318AF0092256F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCF91EF2C1318AF0092256F /* SceneDelegate.swift */; };
-		ADCF91F22C1318AF0092256F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCF91F12C1318AF0092256F /* ViewController.swift */; };
 		ADCF91F52C1318AF0092256F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ADCF91F42C1318AF0092256F /* Base */; };
 		ADCF91F72C1318B50092256F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADCF91F62C1318B50092256F /* Assets.xcassets */; };
 		ADCF91FA2C1318B50092256F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ADCF91F92C1318B50092256F /* Base */; };
@@ -45,10 +45,10 @@
 		ADA184A72C259BD6003F5B87 /* GoodsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsTableViewCell.xib; sourceTree = "<group>"; };
 		ADC39FEA2C53B77600CDE173 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		ADC9F5AA2C5CDAB800F9E22C /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		ADCB612F2CF9C23B00654CF2 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		ADCF91EA2C1318AF0092256F /* KAIMEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAIMEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCF91ED2C1318AF0092256F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADCF91EF2C1318AF0092256F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ADCF91F12C1318AF0092256F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ADCF91F42C1318AF0092256F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCF91F62C1318B50092256F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADCF91F92C1318B50092256F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,6 +87,80 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		ADCB612E2CF9C1E900654CF2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ADCB612F2CF9C23B00654CF2 /* UIViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		ADCB61312CF9C73100654CF2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AD683A1B2C1C4AE800EBE60B /* HomeViewController.swift */,
+				AD683A1D2C1C4B0100EBE60B /* CameraViewController.swift */,
+				AD9A0D512C8C79CB00E4AB63 /* DetailViewController.swift */,
+				ADA184A42C2590E8003F5B87 /* CheckViewController.swift */,
+				ADC39FEA2C53B77600CDE173 /* DataViewController.swift */,
+				ADC9F5AA2C5CDAB800F9E22C /* NoticeViewController.swift */,
+				ADD68D502CA2CF910074E3CB /* UserViewController.swift */,
+				ADD68D542CA43A530074E3CB /* KitchenViewController.swift */,
+				ADD68D562CA43B2A0074E3CB /* NewCameraViewController.swift */,
+				AD683A1F2C1C4B1B00EBE60B /* SettingViewController.swift */,
+				ADD68D5E2CA43CC60074E3CB /* EmergencyViewController.swift */,
+				ADD68D5A2CA43B870074E3CB /* EntranceViewController.swift */,
+				ADD68D5C2CA43BA10074E3CB /* PowderRoomViewController.swift */,
+				ADD68D522CA2E7650074E3CB /* NoticeListViewController.swift */,
+				ADD68D582CA43B560074E3CB /* SecondCheckViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ADCB61322CF9C7CA00654CF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD635B392C413B3B008308B0 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ADCB61332CF9C80000654CF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF91F82C1318B50092256F /* LaunchScreen.storyboard */,
+				ADCF91F32C1318AF0092256F /* Main.storyboard */,
+				ADA184A62C259BD6003F5B87 /* GoodsTableViewCell.swift */,
+				ADA184A72C259BD6003F5B87 /* GoodsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ADCB61342CF9C87F00654CF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF91F62C1318B50092256F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ADCB61352CF9C8CD00654CF2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF91ED2C1318AF0092256F /* AppDelegate.swift */,
+				ADCF91EF2C1318AF0092256F /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		ADCB61362CF9C90000654CF2 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF91FB2C1318B50092256F /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		ADCF91E12C1318AF0092256F = {
 			isa = PBXGroup;
 			children = (
@@ -108,31 +182,13 @@
 		ADCF91EC2C1318AF0092256F /* KAIMEMO */ = {
 			isa = PBXGroup;
 			children = (
-				ADCF91ED2C1318AF0092256F /* AppDelegate.swift */,
-				ADCF91EF2C1318AF0092256F /* SceneDelegate.swift */,
-				ADCF91F12C1318AF0092256F /* ViewController.swift */,
-				ADCF91F32C1318AF0092256F /* Main.storyboard */,
-				ADA184A62C259BD6003F5B87 /* GoodsTableViewCell.swift */,
-				ADA184A72C259BD6003F5B87 /* GoodsTableViewCell.xib */,
-				AD683A1B2C1C4AE800EBE60B /* HomeViewController.swift */,
-				AD9A0D512C8C79CB00E4AB63 /* DetailViewController.swift */,
-				AD683A1D2C1C4B0100EBE60B /* CameraViewController.swift */,
-				ADA184A42C2590E8003F5B87 /* CheckViewController.swift */,
-				AD635B392C413B3B008308B0 /* Product.swift */,
-				ADC39FEA2C53B77600CDE173 /* DataViewController.swift */,
-				ADC9F5AA2C5CDAB800F9E22C /* NoticeViewController.swift */,
-				ADD68D522CA2E7650074E3CB /* NoticeListViewController.swift */,
-				ADD68D502CA2CF910074E3CB /* UserViewController.swift */,
-				ADD68D542CA43A530074E3CB /* KitchenViewController.swift */,
-				ADD68D562CA43B2A0074E3CB /* NewCameraViewController.swift */,
-				ADD68D582CA43B560074E3CB /* SecondCheckViewController.swift */,
-				AD683A1F2C1C4B1B00EBE60B /* SettingViewController.swift */,
-				ADD68D5A2CA43B870074E3CB /* EntranceViewController.swift */,
-				ADD68D5C2CA43BA10074E3CB /* PowderRoomViewController.swift */,
-				ADD68D5E2CA43CC60074E3CB /* EmergencyViewController.swift */,
-				ADCF91F62C1318B50092256F /* Assets.xcassets */,
-				ADCF91F82C1318B50092256F /* LaunchScreen.storyboard */,
-				ADCF91FB2C1318B50092256F /* Info.plist */,
+				ADCB61352CF9C8CD00654CF2 /* Application */,
+				ADCB61312CF9C73100654CF2 /* Controller */,
+				ADCB61322CF9C7CA00654CF2 /* Model */,
+				ADCB612E2CF9C1E900654CF2 /* Extension */,
+				ADCB61332CF9C80000654CF2 /* View */,
+				ADCB61342CF9C87F00654CF2 /* Resources */,
+				ADCB61362CF9C90000654CF2 /* Configuration */,
 			);
 			path = KAIMEMO;
 			sourceTree = "<group>";
@@ -263,7 +319,6 @@
 			files = (
 				ADD68D5B2CA43B870074E3CB /* EntranceViewController.swift in Sources */,
 				AD9A0D522C8C79CB00E4AB63 /* DetailViewController.swift in Sources */,
-				ADCF91F22C1318AF0092256F /* ViewController.swift in Sources */,
 				AD635B3A2C413B3B008308B0 /* Product.swift in Sources */,
 				ADC39FEB2C53B77600CDE173 /* DataViewController.swift in Sources */,
 				AD683A1E2C1C4B0100EBE60B /* CameraViewController.swift in Sources */,
@@ -275,6 +330,7 @@
 				AD683A1C2C1C4AE800EBE60B /* HomeViewController.swift in Sources */,
 				ADD68D552CA43A530074E3CB /* KitchenViewController.swift in Sources */,
 				ADC9F5AB2C5CDAB800F9E22C /* NoticeViewController.swift in Sources */,
+				ADCB61302CF9C23B00654CF2 /* UIViewController.swift in Sources */,
 				ADD68D5F2CA43CC60074E3CB /* EmergencyViewController.swift in Sources */,
 				AD683A202C1C4B1B00EBE60B /* SettingViewController.swift in Sources */,
 				ADD68D532CA2E7650074E3CB /* NoticeListViewController.swift in Sources */,
@@ -443,12 +499,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.fujisaki.non.KAIMEMO.20241011;
+				PRODUCT_BUNDLE_IDENTIFIER = app.fujisaki.non.KAIMEMO.20241129;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -474,12 +531,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.fujisaki.non.KAIMEMO.20241011;
+				PRODUCT_BUNDLE_IDENTIFIER = app.fujisaki.non.KAIMEMO.20241129;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
