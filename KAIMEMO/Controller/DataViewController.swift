@@ -140,6 +140,8 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
+        
+    }
     
     @IBAction func addProduct() {
         var productImage: UIImage!
@@ -198,14 +200,4 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     }
 }
 
-extension UIViewController {
-    func setDismissKeyboard() {
-        let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tapGR.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tapGR)
-    }
-    
-    @objc func dismissKeyboard() {
-        self.view.endEditing(true)
-    }
-}
+

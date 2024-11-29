@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     // 現在選択されている商品ボタンのインデックス
     var selectedIndex: Int = 0
     
-    // キッチンと緊急キット用のボタン
+    // キッチンと緊急キットと新規追加用のボタン
     var kitchenButton: UIButton!
     var emergencyButton: UIButton!
     var plusButton: UIButton!
@@ -100,6 +100,13 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    // 特定のTabBarで切り替えた画面に遷移
+        func switchToTabBar(at index: Int) {
+            if let tabBarController = self.tabBarController {
+                tabBarController.selectedIndex = index
+            }
+        }
     
     // 保存されたデータを読み込むメソッド
     func loadProductData() {
