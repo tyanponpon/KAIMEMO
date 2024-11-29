@@ -45,7 +45,11 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         brandLabel.text = selectedProduct.brand.name
         urlLabel.text = selectedProduct.url
         commentTextView.delegate = self
-        setDismissKeyboard()
+        // キーボードを非表示にする
+//        setDismissKeyboard()
+        
+        // URLラベルにタップジェスチャーを設定
+//        setupUrlLabelGesture()
         
         // DatePickerの設定
         dataPicker.datePickerMode = .date
@@ -115,6 +119,27 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         registerButton.layer.cornerRadius = 25
         registerButton.clipsToBounds = true
     }
+    
+    
+    // URLタップ時の処理
+    @objc func handleUrlTap() {
+        guard let urlString = urlLabel.text, let url = URL(string: urlString) else {
+            // URLが不正な場合の処理
+            let alert = UIAlertController(title: "エラー", message: "無効なURLです。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        // 外部ブラウザでURLを開く
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            // URLを開けない場合のエラーハンドリング
+            let alert = UIAlertController(title: "エラー", message: "このURLを開くことができません。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     
     @IBAction func addProduct() {
         var productImage: UIImage!
