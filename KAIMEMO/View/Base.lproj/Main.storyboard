@@ -38,42 +38,31 @@
                         <segue destination="shh-QA-Ctn" kind="show" identifier="toDetailViewController" id="tGv-ke-svI"/>
                         <segue destination="HsG-Zl-Hen" kind="show" identifier="toKitchenView" id="bh3-pB-j33"/>
                         <segue destination="VmU-d0-8Uc" kind="show" identifier="toEmergencyView" id="rHU-z9-aHG"/>
+                        <segue destination="xzr-cf-j4P" kind="show" identifier="toNewCameraView" id="gRu-y2-jgq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1076" y="-536"/>
         </scene>
-        <!--View Controller-->
+        <!--New Camera View Controller-->
         <scene sceneID="LCh-wp-2eV">
             <objects>
-                <viewController id="xzr-cf-j4P" sceneMemberID="viewController">
+                <viewController id="xzr-cf-j4P" customClass="NewCameraViewController" customModule="KAIMEMO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qVJ-CP-m51">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="HTw-YR-He4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Pif-k0-YKT"/>
+                    <connections>
+                        <segue destination="69Q-DN-5pG" kind="show" identifier="toSecondCheckView" id="0Pi-la-zyR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdJ-SC-wsS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-670" y="-366"/>
-        </scene>
-        <!--New Camera View Controller-->
-        <scene sceneID="fC3-4g-fv8">
-            <objects>
-                <viewController id="y7g-LQ-Ahc" customClass="NewCameraViewController" customModule="KAIMEMO" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="h65-YV-V6w">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="wJ9-b6-dyD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="zhj-ct-nI6"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="trJ-IG-Fcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-314" y="-536"/>
+            <point key="canvasLocation" x="-1566" y="671"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="1Ia-Jc-wWt">
@@ -503,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaX-mz-NZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1038" y="672"/>
+            <point key="canvasLocation" x="353" y="2797"/>
         </scene>
         <!--Entrance View Controller-->
         <scene sceneID="5R9-yV-WGQ">
@@ -518,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jia-9A-086" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-351" y="672"/>
+            <point key="canvasLocation" x="353" y="2101"/>
         </scene>
         <!--Powder Room View Controller-->
         <scene sceneID="YMc-uB-Arm">
@@ -581,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Kg-ht-5Lo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1727" y="672"/>
+            <point key="canvasLocation" x="353" y="1374"/>
         </scene>
         <!--Kitchen View Controller-->
         <scene sceneID="d0B-ny-ZMx">
@@ -613,7 +602,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgL-8D-dbP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2436" y="670.93596059113304"/>
+            <point key="canvasLocation" x="-606" y="671"/>
         </scene>
         <!--登録-->
         <scene sceneID="KBi-Gj-Wmw">
@@ -920,7 +909,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-a0-TGI">
-                                <rect key="frame" x="0.0" y="50" width="375" height="1152"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="1010"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQJ-Ie-xJQ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1020"/>
@@ -1139,7 +1128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHW-sk-KKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424.80000000000001" y="-423.39901477832512"/>
+            <point key="canvasLocation" x="-1569" y="1524"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

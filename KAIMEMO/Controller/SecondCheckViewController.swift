@@ -41,6 +41,17 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
         setupRegisterButtonStyle()
     }
     
+    // Segueを使用して別の画面に移動する前にデータを準備する
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSecondCheckView" {
+            // 商品の詳細画面に選択した商品データを渡す
+            _ = segue.destination as? NewCameraViewController
+            
+        }
+    }
+    
+    
+    
     // PickerViewの列数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
