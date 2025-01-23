@@ -17,7 +17,7 @@ struct Product: Codable{
     var name: String = "Default Name" // 商品の名前
     var priceLabel: PriceLabel  //商品の値段
     var image: Image  //商品画像
-    var url: String //商品のネットショッピングページへのURL
+    var url: URL?//商品のネットショッピングページへのURL
    
     
 }

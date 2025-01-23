@@ -13,10 +13,10 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var minusButton: UIButton!
     @IBOutlet var registerButton: UIButton!
+    @IBOutlet var openURLButton: UIButton!
     @IBOutlet var productImageView: UIImageView!
     @IBOutlet var scrollView: UIScrollView! // スクロールビューを追加
     @IBOutlet var unitPicker: UIPickerView!
-    @IBOutlet var urlLabel: UILabel!
     
     private var preSelectedLb: UILabel!
     private let prefectures: NSArray = ["ml", "L", "mg", "g", "kg", ""]
@@ -43,7 +43,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         productImageView.image = selectedProductImage
         productLabel.text = selectedProduct.name
         brandLabel.text = selectedProduct.brand.name
-        urlLabel.text = selectedProduct.url
+        openURLButton.userActivity?.webpageURL = selectedProduct.url
         commentTextView.delegate = self
         // キーボードを非表示にする
 //        setDismissKeyboard()
@@ -121,7 +121,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     }
     
     
-    // URLタップ時の処理
+  /*  // URLタップ時の処理
     @objc func handleUrlTap() {
         guard let urlString = urlLabel.text, let url = URL(string: urlString) else {
             // URLが不正な場合の処理
@@ -130,6 +130,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             present(alert, animated: true, completion: nil)
             return
         }
+
         
         // 外部ブラウザでURLを開く
         if UIApplication.shared.canOpenURL(url) {
@@ -141,7 +142,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             present(alert, animated: true, completion: nil)
         }
         
-    }
+    }*/
     
     @IBAction func addProduct() {
         var productImage: UIImage!
@@ -168,7 +169,6 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             "price": priceTextField.text as Any,
             "period": selectedDate,
             "stock": count as Any,
-            "store": urlLabel.text as Any,
             "currentPage": "HomeVC" as Any,
             "createdAt": currentDateString
         ]
@@ -197,6 +197,11 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBAction func tapMinusButton() {
         count -= 1
         countLabel.text = String(count)
+    }
+    
+    @IBAction func openURLTapped(_ sender: Any) {
+        guard let url = URL(string: "") else { return }
+        UIApplication.shared.open(url)
     }
 }
 
