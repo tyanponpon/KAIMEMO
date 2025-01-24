@@ -253,11 +253,11 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbf-9O-IpG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商品名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbf-9O-IpG">
                                                 <rect key="frame" x="158" y="92" width="200" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.93333333333333335" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -266,7 +266,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VQ-JG-kfK">
-                                                <rect key="frame" x="285" y="442" width="47" height="35"/>
+                                                <rect key="frame" x="281" y="442" width="47" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="tintColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
@@ -305,7 +305,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Rjx-hQ-Nb6">
-                                                <rect key="frame" x="15" y="437" width="164" height="41"/>
+                                                <rect key="frame" x="15" y="437" width="108" height="41"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -316,19 +316,6 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </pickerView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7K-SN-KZ5">
-                                                <rect key="frame" x="77" y="758" width="220" height="55"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="買いメモする">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="addProduct" destination="Bhe-PG-CDm" eventType="touchUpInside" id="R3t-3b-yDg"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP6-dI-EwF">
                                                 <rect key="frame" x="309" y="394" width="0.0" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -376,6 +363,15 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyt-h6-tjx">
+                                                <rect key="frame" x="77" y="768" width="220" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="addProduct" destination="Bhe-PG-CDm" eventType="touchUpInside" id="nRq-I4-cml"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93333333333333335" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -417,14 +413,14 @@
                         <outlet property="priceTextField" destination="A3J-6u-syb" id="7i4-fB-PQI"/>
                         <outlet property="productImageView" destination="5w6-fb-3fx" id="hZf-SD-M9A"/>
                         <outlet property="productLabel" destination="Pbf-9O-IpG" id="PZz-u9-MgL"/>
-                        <outlet property="registerButton" destination="d7K-SN-KZ5" id="KEd-qD-Thk"/>
+                        <outlet property="registerButton" destination="Lyt-h6-tjx" id="fFz-B9-4nX"/>
                         <outlet property="scrollView" destination="lLk-c4-kNZ" id="fxt-rs-E7V"/>
                         <outlet property="unitPicker" destination="ysS-TB-gaB" id="lyp-SM-6lU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JE-o4-yoc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="2350.4926108374384"/>
+            <point key="canvasLocation" x="1700" y="2350.4926108374384"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OLS-fu-fku">
@@ -773,13 +769,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4A-vP-oDu">
-                                                <rect key="frame" x="146" y="165" width="190" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="容量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaS-n9-GQg">
                                                 <rect key="frame" x="13" y="310" width="23" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -845,7 +834,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNp-w1-ESR">
-                                                <rect key="frame" x="300" y="27" width="51" height="35"/>
+                                                <rect key="frame" x="324" y="23" width="51" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
@@ -875,6 +864,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4U-Ww-beu">
+                                                <rect key="frame" x="160" y="154" width="75" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="openURLTapped:" destination="shh-QA-Ctn" eventType="touchUpInside" id="buQ-U9-mIc"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93333333333333335" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -905,12 +903,13 @@
                     <navigationItem key="navigationItem" title="内容" id="z7x-Xq-xUh"/>
                     <size key="freeformSize" width="375" height="1039"/>
                     <connections>
-                        <outlet property="brandLabel" destination="R4A-vP-oDu" id="gVB-Q7-GfH"/>
+                        <outlet property="brandLabel" destination="Xmm-k3-fO7" id="kRz-G6-fEf"/>
                         <outlet property="capacityTextField" destination="14y-qs-SUF" id="JgJ-ti-QGz"/>
                         <outlet property="commentTextView" destination="QYh-25-DQn" id="dYu-4g-zvN"/>
                         <outlet property="createdAtLabel" destination="bMF-GU-MYU" id="ikR-Fr-NeU"/>
                         <outlet property="dataPicker" destination="ofw-ot-Ra8" id="gsR-5L-HJi"/>
                         <outlet property="minusButton" destination="qPH-zL-b7C" id="hxE-is-hH7"/>
+                        <outlet property="openURLButton" destination="N4U-Ww-beu" id="pXb-3Z-ZjS"/>
                         <outlet property="plusButton" destination="wrt-om-Mam" id="9Mo-fQ-elD"/>
                         <outlet property="priceTextField" destination="BFb-vP-MPK" id="Urq-JV-1Ce"/>
                         <outlet property="productImageView" destination="Gab-BR-qb7" id="2kw-dv-hRG"/>
@@ -1057,7 +1056,7 @@
                                                 <rect key="frame" x="77" y="758" width="220" height="55"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="買いメモする">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
@@ -1088,7 +1087,7 @@
                                                 <rect key="frame" x="158" y="92" width="200" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="買いメモする" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxj-ZU-NBU">

@@ -33,7 +33,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     @IBOutlet var minusButton: UIButton!
     @IBOutlet var dataPicker: UIDatePicker!
     @IBOutlet var unitPicker: UIPickerView!
-    @IBOutlet var urlLabel: UILabel!
+    @IBOutlet var openURLButton: UIButton!
     @IBOutlet var scrollView: UIScrollView! // スクロールビューを追加
     private var preSelectedLb: UILabel!
     private let prefectures: [String] = ["ml", "L", "mg", "g", "kg", ""]
@@ -59,7 +59,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             priceTextField.text = productData["price"] as? String
             stockLabel.text = "\(productData["stock"] ?? 0)"
             createdAtLabel.text = productData["createdAt"] as? String
-            urlLabel.text = productData["store"] as? String
             if let period = productData["period"] as? Date {
                 dataPicker.date = period
             }
@@ -104,7 +103,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             .font: boldFont,
             .foregroundColor: UIColor.white
         ]
-        let attributedTitle = NSAttributedString(string: "更新", attributes: attributes)
+        let attributedTitle = NSAttributedString(string: "買いメモする", attributes: attributes)
         registerButton.setAttributedTitle(attributedTitle, for: .normal)
         
         // ボタンの背景を紺色のグラデーションに設定
@@ -146,7 +145,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         updatedData["comment"] = commentTextView.text
         updatedData["price"] = priceTextField.text
         updatedData["stock"] = Int(stockLabel.text ?? "0")
-        updatedData["store"] = urlLabel.text
         updatedData["period"] = dataPicker.date // ストック情報を更新
         
         // UserDefaultsから保存されたデータを取得
@@ -190,6 +188,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func openURLTapped(_ sender: Any) {
+        guard let url = URL(string: productData!["url"] as! String) else { return }
+        UIApplication.shared.open(url)
     }
     
     @IBAction func tapPlusButton() {

@@ -8,7 +8,6 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet var capacityTextField: UITextField!
     @IBOutlet var priceTextField: UITextField!
     @IBOutlet var dataPicker: UIDatePicker!
-    @IBOutlet var storeTextField: UITextField!
     @IBOutlet var commentTextView: UITextView!
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var productImageView: UIImageView!
@@ -98,23 +97,22 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     @IBAction func registerProduct() {
-        var productImage: UIImage! = productImageView.image ?? UIImage(named: "defaultImage")
+        let productImage: UIImage! = productImageView.image 
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         
         // 商品データに選択した情報を保存
         let data: [String: Any] = [
-            "name": productTextField.text ?? "",
-            "brand": brandTextField.text ?? "",
-            "capacity": capacityTextField.text ?? "",
+            "name": productTextField.text as Any,
+            "brand": brandTextField.text as Any,
+            "capacity": capacityTextField.text as Any,
             "unit": selectedUnit,
-            "price": priceTextField.text ?? "",
+            "price": priceTextField.text as Any,
             "expirationDate": dataPicker.date,
-            "stock": countLabel.text ?? "",
-            "store": storeTextField.text ?? "",
-            "comment": commentTextView.text ?? "",
-            "image": productImage.pngData() ?? Data()
+            "stock": countLabel.text as Any,
+            "comment": commentTextView.text as Any,
+            "image": productImage.pngData() as NSData? as Any
         ]
         
         // 保存されたデータを取得し、新しいデータを追加して保存

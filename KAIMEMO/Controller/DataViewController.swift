@@ -46,10 +46,10 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         openURLButton.userActivity?.webpageURL = selectedProduct.url
         commentTextView.delegate = self
         // キーボードを非表示にする
-//        setDismissKeyboard()
+        //        setDismissKeyboard()
         
         // URLラベルにタップジェスチャーを設定
-//        setupUrlLabelGesture()
+        //        setupUrlLabelGesture()
         
         // DatePickerの設定
         dataPicker.datePickerMode = .date
@@ -101,7 +101,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             .font: boldFont,
             .foregroundColor: UIColor.white
         ]
-        let attributedTitle = NSAttributedString(string: "登録", attributes: attributes)
+        let attributedTitle = NSAttributedString(string: "買いメモする", attributes: attributes)
         registerButton.setAttributedTitle(attributedTitle, for: .normal)
         
         // ボタンの背景を紺色のグラデーションに設定
@@ -120,29 +120,6 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         registerButton.clipsToBounds = true
     }
     
-    
-  /*  // URLタップ時の処理
-    @objc func handleUrlTap() {
-        guard let urlString = urlLabel.text, let url = URL(string: urlString) else {
-            // URLが不正な場合の処理
-            let alert = UIAlertController(title: "エラー", message: "無効なURLです。", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-            return
-        }
-
-        
-        // 外部ブラウザでURLを開く
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            // URLを開けない場合のエラーハンドリング
-            let alert = UIAlertController(title: "エラー", message: "このURLを開くことができません。", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-        }
-        
-    }*/
     
     @IBAction func addProduct() {
         var productImage: UIImage!
@@ -169,6 +146,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             "price": priceTextField.text as Any,
             "period": selectedDate,
             "stock": count as Any,
+            "url": selectedProduct.url?.description as String? as Any,
             "currentPage": "HomeVC" as Any,
             "createdAt": currentDateString
         ]
@@ -196,11 +174,14 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     
     @IBAction func tapMinusButton() {
         count -= 1
+        if count < 0 {
+            count = 0 // 0以下の数字は全て0にする
+        }
         countLabel.text = String(count)
     }
     
     @IBAction func openURLTapped(_ sender: Any) {
-        guard let url = URL(string: "") else { return }
+        guard let url = URL(string: selectedProduct.url!.description) else { return }
         UIApplication.shared.open(url)
     }
 }
