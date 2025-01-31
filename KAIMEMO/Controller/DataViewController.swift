@@ -17,6 +17,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBOutlet var productImageView: UIImageView!
     @IBOutlet var scrollView: UIScrollView! // スクロールビューを追加
     @IBOutlet var unitPicker: UIPickerView!
+    @IBOutlet var heartButton: UIButton!
     
     private var preSelectedLb: UILabel!
     private let prefectures: NSArray = ["ml", "L", "mg", "g", "kg", ""]
