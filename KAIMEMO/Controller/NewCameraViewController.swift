@@ -28,15 +28,13 @@ class NewCameraViewController: UIViewController, UIImagePickerControllerDelegate
     // 画面が表示された後の処理
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // カメラセッションを開始（未使用部分）
-        // captureSession.startRunning()
+       
     }
     
     // 画面が非表示になる際の処理
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        // カメラセッションを停止（未使用部分）
-        // captureSession.stopRunning()
+       
     }
     
     // 別画面に移動する前のデータ準備

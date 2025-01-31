@@ -99,8 +99,11 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBAction func registerProduct() {
         let productImage: UIImage! = productImageView.image 
         
+        // 今日の日付を取得してフォーマット
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.dateFormat = "yyyy/MM/dd" // ←ここをいじると表示形式が変わる
+        let currentDateString = dateFormatter.string(from: Date())
+        let selectedDate = dataPicker.date
         
         // 商品データに選択した情報を保存
         let data: [String: Any] = [
@@ -112,7 +115,10 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
             "expirationDate": dataPicker.date,
             "stock": countLabel.text as Any,
             "comment": commentTextView.text as Any,
-            "image": productImage.pngData() as NSData? as Any
+            "image": productImage.pngData() as NSData? as Any,
+            "period": selectedDate,
+            "currentPage": "HomeVC" as Any,
+            "createdAt": currentDateString
         ]
         
         // 保存されたデータを取得し、新しいデータを追加して保存

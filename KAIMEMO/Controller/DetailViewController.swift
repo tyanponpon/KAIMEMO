@@ -103,7 +103,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             .font: boldFont,
             .foregroundColor: UIColor.white
         ]
-        let attributedTitle = NSAttributedString(string: "買いメモする", attributes: attributes)
+        let attributedTitle = NSAttributedString(string: "更新する", attributes: attributes)
         registerButton.setAttributedTitle(attributedTitle, for: .normal)
         
         // ボタンの背景を紺色のグラデーションに設定
@@ -201,7 +201,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     }
     
     @IBAction func tapMinusButton() {
-        count = max(0, count - 1) // 在庫は0未満にならないようにする
+        count -= 1
+        if count < 0 {
+            count = 0 // 0以下の数字は全て0にする
+        }
         stockLabel.text = String(count)
     }
 }
