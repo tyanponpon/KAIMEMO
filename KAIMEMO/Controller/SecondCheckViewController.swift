@@ -20,6 +20,8 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
     var productDataArray = [[String: Any]]()
     var saveData: UserDefaults = UserDefaults.standard
     
+    let buttonKey = "myButtonState"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +40,7 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
         commentTextView.delegate = self
         setDismissKeyboard()
         setupRegisterButtonStyle()
+        let isButtonTapped = UserDefaults.standard.bool(forKey: buttonKey)
     }
     
     // Segueを使用して別の画面に移動する前にデータを準備する
@@ -48,8 +51,6 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
             
         }
     }
-    
-    
     
     // PickerViewの列数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -96,8 +97,15 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
         registerButton.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    @IBAction func buttonTapped(_ sender: UIButton) {
+           // ボタンの状態を変更
+           let newState = true
+           UserDefaults.standard.set(newState, forKey: buttonKey)
+           
+       }
+    
     @IBAction func registerProduct() {
-        let productImage: UIImage! = productImageView.image 
+        let productImage: UIImage! = productImageView.image
         
         // 今日の日付を取得してフォーマット
         let dateFormatter = DateFormatter()

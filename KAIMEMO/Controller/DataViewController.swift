@@ -15,9 +15,10 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var openURLButton: UIButton!
     @IBOutlet var productImageView: UIImageView!
+    @IBOutlet var markImageView: UIImageView!
     @IBOutlet var scrollView: UIScrollView! // スクロールビューを追加
     @IBOutlet var unitPicker: UIPickerView!
-    @IBOutlet var heartButton: UIButton!
+    
     
     private var preSelectedLb: UILabel!
     private let prefectures: NSArray = ["ml", "L", "mg", "g", "kg", ""]
@@ -121,6 +122,14 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         registerButton.clipsToBounds = true
     }
     
+    func favoritetapped(isMarked: Bool){
+        if isMarked{
+            markImageView.image = UIImage(systemName: "heart.fill")
+        } else {
+            markImageView.image = UIImage(systemName: "heart")
+        }
+    }
+    
     
     @IBAction func addProduct() {
         var productImage: UIImage!
@@ -148,16 +157,17 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             "period": selectedDate,
             "stock": count as Any,
             "url": selectedProduct.url?.description as String? as Any,
+            "favorite": favoritetapped(isMarked: Bool) as! String? as Any,
             "currentPage": "HomeVC" as Any,
             "createdAt": currentDateString
         ]
         
         // 保存されたデータをUserDefaultsから取得
-        if let savedData = saveData.array(forKey: "array_data") as? [[String: Any]] {
+        if let savedData = saveData.array(forKey: "productData") as? [[String: Any]] {
             productDataArray = savedData
         }
         productDataArray.append(data)
-        saveData.set(productDataArray, forKey: "array_data")
+        saveData.set(productDataArray, forKey: "productData")
         
         // アラートの表示
         let alert = UIAlertController(title: "登録", message: "商品情報を登録しました。", preferredStyle: .alert)

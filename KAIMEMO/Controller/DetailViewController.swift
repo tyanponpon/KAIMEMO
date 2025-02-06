@@ -34,6 +34,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     @IBOutlet var dataPicker: UIDatePicker!
     @IBOutlet var unitPicker: UIPickerView!
     @IBOutlet var openURLButton: UIButton!
+    @IBOutlet var favoriteButton: UIButton!
     @IBOutlet var scrollView: UIScrollView! // スクロールビューを追加
     private var preSelectedLb: UILabel!
     private let prefectures: [String] = ["ml", "L", "mg", "g", "kg", ""]
@@ -148,7 +149,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         updatedData["period"] = dataPicker.date // ストック情報を更新
         
         // UserDefaultsから保存されたデータを取得
-        if let savedData = saveData.array(forKey: "array_data") as? [[String: Any]] {
+        if let savedData = saveData.array(forKey: "productData") as? [[String: Any]] {
             productDataArray = savedData
         }
         
@@ -158,13 +159,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             let deleteAction = UIAlertAction(title: "削除する", style: .destructive) { _ in
                 // 商品情報を削除
                 self.productDataArray.remove(at: self.productIndex)
-                self.saveData.set(self.productDataArray, forKey: "array_data")
+                self.saveData.set(self.productDataArray, forKey: "productData")
                 self.navigationController?.popToRootViewController(animated: true)
             }
             let keepAction = UIAlertAction(title: "そのまま残す", style: .default) { _ in
                 // 在庫が0のまま商品を保存
                 self.productDataArray[self.productIndex] = updatedData
-                self.saveData.set(self.productDataArray, forKey: "array_data")
+                self.saveData.set(self.productDataArray, forKey: "productData")
                 
                 let alert = UIAlertController(title: "編集完了", message: "商品情報を保存しました。", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default) { _ in
@@ -179,7 +180,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         } else {
             // 在庫がある場合、データを更新して保存
             productDataArray[self.productIndex] = updatedData
-            saveData.set(productDataArray, forKey: "array_data")
+            saveData.set(productDataArray, forKey: "productData")
             
             let alert = UIAlertController(title: "編集完了", message: "商品情報を保存しました。", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default) { _ in

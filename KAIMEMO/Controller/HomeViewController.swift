@@ -110,7 +110,7 @@ class HomeViewController: UIViewController {
     
     // 保存されたデータを読み込むメソッド
     func loadProductData() {
-        if let savedData = saveData.array(forKey: "array_data") as? [[String: Any]] {
+        if let savedData = saveData.array(forKey: "productData") as? [[String: Any]] {
             // 保存されている全ての商品データを読み込む
             productDataArray = savedData
             print(productDataArray) // データが正しく読み込まれたか確認のために表示
@@ -229,7 +229,7 @@ class HomeViewController: UIViewController {
             saveData.set(updatedButtonPositions, forKey: "kitchen_button_positions")
             
             // 削除後のデータを保存
-            saveData.set(productDataArray, forKey: "array_data")
+            saveData.set(productDataArray, forKey: "productData")
             
             // ボタンを再生成
             createProductButtons()
