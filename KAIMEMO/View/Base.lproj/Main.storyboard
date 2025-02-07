@@ -368,10 +368,16 @@
                                                     <action selector="addProduct" destination="Bhe-PG-CDm" eventType="touchUpInside" id="nRq-I4-cml"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LX1-Ik-FCe">
-                                                <rect key="frame" x="302" y="8" width="65" height="65"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRS-2y-hEd">
+                                                <rect key="frame" x="281" y="-7" width="100" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                                <connections>
+                                                    <action selector="tapHeartButton" destination="Bhe-PG-CDm" eventType="touchUpInside" id="gQW-SI-xAD"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93333333333333335" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -407,7 +413,7 @@
                         <outlet property="commentTextView" destination="SCY-KJ-Nef" id="Pqm-Pe-BcN"/>
                         <outlet property="countLabel" destination="JCf-31-bK4" id="oSK-fM-zVs"/>
                         <outlet property="dataPicker" destination="Rjx-hQ-Nb6" id="Gdd-bs-dqS"/>
-                        <outlet property="markImageView" destination="LX1-Ik-FCe" id="ngH-BZ-rkm"/>
+                        <outlet property="heartButton" destination="WRS-2y-hEd" id="0ow-BU-Vog"/>
                         <outlet property="minusButton" destination="2VQ-JG-kfK" id="rvg-U8-LQk"/>
                         <outlet property="openURLButton" destination="VRQ-et-zCd" id="ffT-5P-cdE"/>
                         <outlet property="plusButton" destination="iFh-x3-bBr" id="M6l-8s-R8Y"/>

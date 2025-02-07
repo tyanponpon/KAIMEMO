@@ -15,7 +15,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var openURLButton: UIButton!
     @IBOutlet var productImageView: UIImageView!
-    @IBOutlet var markImageView: UIImageView!
+    @IBOutlet var heartButton: UIButton!
     @IBOutlet var scrollView: UIScrollView! // スクロールビューを追加
     @IBOutlet var unitPicker: UIPickerView!
     
@@ -170,13 +170,15 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func tapMarkImageView() {
-        if isLike {
-            markImageView.image = UIImage(systemName: "heart")
+    @IBAction func tapHeartButton() {
+        if isLike == true {
+            isLike = false
+            heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
         } else {
-            markImageView.image = UIImage(systemName: "heart.fill")
+            isLike = true
+            heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
-    
+        
     }
     
     @IBAction func tapPlusButton() {
