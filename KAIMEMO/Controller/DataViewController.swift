@@ -29,6 +29,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     var selectedProduct: Product!
     var selectedProductImage: UIImage!
     var count = 1
+    var isLike = false
     var selectedUnit: String = "" // 単位を保持する変数
     
     override func viewDidLoad() {
@@ -122,15 +123,6 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         registerButton.clipsToBounds = true
     }
     
-    func favoritetapped(isMarked: Bool){
-        if isMarked{
-            markImageView.image = UIImage(systemName: "heart.fill")
-        } else {
-            markImageView.image = UIImage(systemName: "heart")
-        }
-    }
-    
-    
     @IBAction func addProduct() {
         var productImage: UIImage!
         if productImageView.image == nil {
@@ -157,7 +149,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             "period": selectedDate,
             "stock": count as Any,
             "url": selectedProduct.url?.description as String? as Any,
-          //  "favorite": favoritetapped(isMarked: Bool) as! String? as Any,
+            "favorite": isLike as Any,
             "currentPage": "HomeVC" as Any,
             "createdAt": currentDateString
         ]
@@ -178,6 +170,15 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func tapMarkImageView() {
+        if isLike {
+            markImageView.image = UIImage(systemName: "heart")
+        } else {
+            markImageView.image = UIImage(systemName: "heart.fill")
+        }
+    
+    }
+    
     @IBAction func tapPlusButton() {
         count += 1
         countLabel.text = String(count)
@@ -196,5 +197,3 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         UIApplication.shared.open(url)
     }
 }
-
-

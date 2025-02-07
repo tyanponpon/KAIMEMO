@@ -407,6 +407,7 @@
                         <outlet property="commentTextView" destination="SCY-KJ-Nef" id="Pqm-Pe-BcN"/>
                         <outlet property="countLabel" destination="JCf-31-bK4" id="oSK-fM-zVs"/>
                         <outlet property="dataPicker" destination="Rjx-hQ-Nb6" id="Gdd-bs-dqS"/>
+                        <outlet property="markImageView" destination="LX1-Ik-FCe" id="ngH-BZ-rkm"/>
                         <outlet property="minusButton" destination="2VQ-JG-kfK" id="rvg-U8-LQk"/>
                         <outlet property="openURLButton" destination="VRQ-et-zCd" id="ffT-5P-cdE"/>
                         <outlet property="plusButton" destination="iFh-x3-bBr" id="M6l-8s-R8Y"/>
