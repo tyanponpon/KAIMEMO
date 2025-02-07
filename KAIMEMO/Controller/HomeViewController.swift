@@ -54,7 +54,7 @@ class HomeViewController: UIViewController {
         plusButton.setTitle("+", for: .normal)
         plusButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         plusButton.frame = CGRect(x: view.frame.width - 70, y: view.frame.height - tabBarHeight - 70, width: 60, height: 60)
-        plusButton.backgroundColor = .blue
+        plusButton.backgroundColor = .gray
         plusButton.setTitleColor(.white, for: .normal)
         plusButton.layer.cornerRadius = 30
         view.addSubview(plusButton)

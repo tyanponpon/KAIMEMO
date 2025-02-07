@@ -157,7 +157,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             "period": selectedDate,
             "stock": count as Any,
             "url": selectedProduct.url?.description as String? as Any,
-            "favorite": favoritetapped(isMarked: Bool) as! String? as Any,
+          //  "favorite": favoritetapped(isMarked: Bool) as! String? as Any,
             "currentPage": "HomeVC" as Any,
             "createdAt": currentDateString
         ]
