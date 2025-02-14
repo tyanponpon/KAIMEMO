@@ -104,7 +104,7 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
         userName.font = UIFont.boldSystemFont(ofSize: 22)  // Bold設定
         
         // プロフィール画像を表示（ない場合は灰色の画像を表示）
-        if let imageData = userDefaults.data(forKey: "userProfileImage"), let profileImage = UIImage(data: imageData) {
+        if let imageData = userDefaults.data(forKey: "profileImage"), let profileImage = UIImage(data: imageData) {
             userImage.image = profileImage
         } else {
             userImage.backgroundColor = .lightGray // プロフィール画像がない場合は背景色を灰色に設定

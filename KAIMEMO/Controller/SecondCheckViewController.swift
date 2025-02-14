@@ -10,6 +10,7 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet var dataPicker: UIDatePicker!
     @IBOutlet var commentTextView: UITextView!
     @IBOutlet var registerButton: UIButton!
+    @IBOutlet var heartButton: UIButton!
     @IBOutlet var productImageView: UIImageView!
     @IBOutlet var unitPicker: UIPickerView!
     @IBOutlet var scrollView: UIScrollView!
@@ -19,8 +20,8 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     var productDataArray = [[String: Any]]()
     var saveData: UserDefaults = UserDefaults.standard
-    
-    let buttonKey = "myButtonState"
+    var isLike = false
+    var count = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,6 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
         commentTextView.delegate = self
         setDismissKeyboard()
         setupRegisterButtonStyle()
-        let isButtonTapped = UserDefaults.standard.bool(forKey: buttonKey)
     }
     
     // Segueを使用して別の画面に移動する前にデータを準備する
@@ -97,12 +97,29 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
         registerButton.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    @IBAction func buttonTapped(_ sender: UIButton) {
-           // ボタンの状態を変更
-           let newState = true
-           UserDefaults.standard.set(newState, forKey: buttonKey)
-           
-       }
+    @IBAction func tapHeartButton() {
+        if isLike == true {
+            isLike = false
+            heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        } else {
+            isLike = true
+            heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        
+    }
+    
+    @IBAction func tapPlusButton() {
+        count += 1
+        countLabel.text = String(count)
+    }
+    
+    @IBAction func tapMinusButton() {
+        count -= 1
+        if count < 0 {
+            count = 0 // 0以下の数字は全て0にする
+        }
+        countLabel.text = String(count)
+    }
     
     @IBAction func registerProduct() {
         let productImage: UIImage! = productImageView.image
@@ -126,6 +143,7 @@ class SecondCheckViewController: UIViewController, UITextFieldDelegate, UITextVi
             "image": productImage.pngData() as NSData? as Any,
             "period": selectedDate,
             "currentPage": "HomeVC" as Any,
+            "favorite": isLike as Any,
             "createdAt": currentDateString
         ]
         

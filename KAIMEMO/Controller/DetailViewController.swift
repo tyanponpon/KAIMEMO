@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     var productIndex: Int = 0  // データのインデックス
     var saveData: UserDefaults = UserDefaults.standard
     var count = 0
+    var isLike: Bool!
     
     
     // UIの接続
@@ -34,8 +35,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     @IBOutlet var dataPicker: UIDatePicker!
     @IBOutlet var unitPicker: UIPickerView!
     @IBOutlet var openURLButton: UIButton!
-    @IBOutlet var favoriteButton: UIButton!
+    @IBOutlet var heartButton: UIButton!
     @IBOutlet var scrollView: UIScrollView! // スクロールビューを追加
+    
     private var preSelectedLb: UILabel!
     private let prefectures: [String] = ["ml", "L", "mg", "g", "kg", ""]
     
@@ -60,6 +62,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             priceTextField.text = productData["price"] as? String
             stockLabel.text = "\(productData["stock"] ?? 0)"
             createdAtLabel.text = productData["createdAt"] as? String
+            isLike = (productData["favorite"] as? Bool)!
+            if isLike == true {
+                heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            } else {
+                heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            }
+            
             if let period = productData["period"] as? Date {
                 dataPicker.date = period
             }
@@ -147,6 +156,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         updatedData["price"] = priceTextField.text
         updatedData["stock"] = Int(stockLabel.text ?? "0")
         updatedData["period"] = dataPicker.date // ストック情報を更新
+        updatedData["favorite"] = isLike
         
         // UserDefaultsから保存されたデータを取得
         if let savedData = saveData.array(forKey: "productData") as? [[String: Any]] {
@@ -191,6 +201,17 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         }
     }
     
+    @IBAction func tapHeartButton() {
+        if isLike == true {
+            isLike = false
+            heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        } else {
+            isLike = true
+            heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        
+    }
+   
     @IBAction func openURLTapped(_ sender: Any) {
         guard let url = URL(string: productData!["url"] as! String) else { return }
         UIApplication.shared.open(url)

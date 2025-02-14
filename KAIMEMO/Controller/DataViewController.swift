@@ -48,12 +48,10 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         brandLabel.text = selectedProduct.brand.name
         openURLButton.userActivity?.webpageURL = selectedProduct.url
         commentTextView.delegate = self
+        
         // キーボードを非表示にする
-        //        setDismissKeyboard()
-        
-        // URLラベルにタップジェスチャーを設定
-        //        setupUrlLabelGesture()
-        
+        setDismissKeyboard()
+    
         // DatePickerの設定
         dataPicker.datePickerMode = .date
         

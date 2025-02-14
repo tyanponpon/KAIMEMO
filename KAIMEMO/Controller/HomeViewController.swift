@@ -29,43 +29,21 @@ class HomeViewController: UIViewController {
         
         // タブバーの高さを取得
         let tabBarHeight = tabBarController?.tabBar.frame.height ?? 0
-        
-        // 背景にグラデーションを設定
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [
-            UIColor(red: 1.0, green: 0.94, blue: 0.7, alpha: 1.0).cgColor,  // パステルイエロー
-            UIColor(red: 0.7, green: 1.0, blue: 0.7, alpha: 1.0).cgColor    // パステルグリーン
-        ]
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-        
-        // グラデーションのフレームをタブバーの高さを引いたサイズにする
-        let gradientFrame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - tabBarHeight)
-        gradientLayer.frame = gradientFrame
-        
-        // すでにグラデーションレイヤーが存在する場合、重複を避けるため削除
-        view.layer.sublayers?.removeAll(where: { $0 is CAGradientLayer })
-        
-        // グラデーションレイヤーをビューに追加
-        view.layer.insertSublayer(gradientLayer, at: 0)
-        
+    
         // プラスボタンを生成してビューに追加
         plusButton = UIButton(type: .system)
         plusButton.setTitle("+", for: .normal)
-        plusButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        plusButton.frame = CGRect(x: view.frame.width - 70, y: view.frame.height - tabBarHeight - 70, width: 60, height: 60)
-        plusButton.backgroundColor = .gray
+        plusButton.titleLabel?.font = UIFont.systemFont(ofSize: 70)
+        //plusButton.frame = CGRect(x: view.frame.width - 70, y: view.frame.height - tabBarHeight - 70, width: 60, height: 60)
+        //plusButton.backgroundColor = .gray
         plusButton.setTitleColor(.white, for: .normal)
         plusButton.layer.cornerRadius = 30
         view.addSubview(plusButton)
-        
         
         // plusButtonにアクションを追加
         plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         
         setupButtons()
-        
-        
     }
     
     
