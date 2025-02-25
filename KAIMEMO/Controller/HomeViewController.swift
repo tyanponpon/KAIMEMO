@@ -29,19 +29,20 @@ class HomeViewController: UIViewController {
         
         // タブバーの高さを取得
         let tabBarHeight = tabBarController?.tabBar.frame.height ?? 0
-    
+        
         // プラスボタンを生成してビューに追加
         plusButton = UIButton(type: .system)
         plusButton.setTitle("+", for: .normal)
-        plusButton.titleLabel?.font = UIFont.systemFont(ofSize: 70)
-        //plusButton.frame = CGRect(x: view.frame.width - 70, y: view.frame.height - tabBarHeight - 70, width: 60, height: 60)
-        //plusButton.backgroundColor = .gray
-        plusButton.setTitleColor(.white, for: .normal)
-        plusButton.layer.cornerRadius = 30
+        plusButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
+        plusButton.setTitleColor(.black, for: .normal) // プラスの色を黒に変更
+        plusButton.backgroundColor = .clear // 背景を透明にする
+        plusButton.layer.cornerRadius = 15 // 角丸設定
+           plusButton.frame = CGRect(x: 16, y: 85, width: 60, height: 60) // 位置を固定
         view.addSubview(plusButton)
         
         // plusButtonにアクションを追加
         plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+        
         
         setupButtons()
     }
@@ -80,11 +81,11 @@ class HomeViewController: UIViewController {
     }
     
     // 特定のTabBarで切り替えた画面に遷移
-        func switchToTabBar(at index: Int) {
-            if let tabBarController = self.tabBarController {
-                tabBarController.selectedIndex = index
-            }
+    func switchToTabBar(at index: Int) {
+        if let tabBarController = self.tabBarController {
+            tabBarController.selectedIndex = index
         }
+    }
     
     // 保存されたデータを読み込むメソッド
     func loadProductData() {
@@ -384,12 +385,12 @@ class HomeViewController: UIViewController {
             if kitchenButton.frame.contains(productButton.center) {
                 animateImageDrop(to: kitchenButton, productButton: productButton)
                 productDataArray[productButton.tag]["currentPage"] = "KitchenVC"
-                saveData.set(productDataArray, forKey: "array_data")
+                saveData.set(productDataArray, forKey: "productData")
                 registerProductToView(productData: productDataArray[productButton.tag], forView: "kitchenView")
             } else if emergencyButton.frame.contains(productButton.center) {
                 animateImageDrop(to: emergencyButton, productButton: productButton)
                 productDataArray[productButton.tag]["currentPage"] = "EmergencyVC"
-                saveData.set(productDataArray, forKey: "array_data")
+                saveData.set(productDataArray, forKey: "productData")
                 registerProductToView(productData: productDataArray[productButton.tag], forView: "emergencyView")
             } else if trashButton.frame.contains(productButton.center) {
                 confirmDeletion(for: productButton)

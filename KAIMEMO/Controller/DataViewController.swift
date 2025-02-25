@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI 
 
 class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -34,6 +35,17 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // SwiftUI の HomeView をホスティング
+        let dataView = DataView()
+        let hostingController = UIHostingController(rootView: dataView)
+        
+        addChild(hostingController)
+        hostingController.view.frame = view.bounds
+        hostingController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(hostingController.view)
+        hostingController.didMove(toParent: self)
+        
         unitPicker.delegate = self
         unitPicker.dataSource = self
         
@@ -51,7 +63,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         
         // キーボードを非表示にする
         setDismissKeyboard()
-    
+        
         // DatePickerの設定
         dataPicker.datePickerMode = .date
         
