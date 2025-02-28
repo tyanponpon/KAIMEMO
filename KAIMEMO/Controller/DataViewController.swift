@@ -36,7 +36,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // SwiftUI の HomeView をホスティング
+      /*  // SwiftUI の HomeView をホスティング
         let dataView = DataView()
         let hostingController = UIHostingController(rootView: dataView)
         
@@ -44,7 +44,7 @@ class DataViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         hostingController.view.frame = view.bounds
         hostingController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(hostingController.view)
-        hostingController.didMove(toParent: self)
+        hostingController.didMove(toParent: self) */
         
         unitPicker.delegate = self
         unitPicker.dataSource = self

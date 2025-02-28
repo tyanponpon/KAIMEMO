@@ -1,6 +1,9 @@
 import UIKit
+import Combine
+import SwiftUI
 
 class HomeViewController: UIViewController {
+    private var viewModel = HomeViewModel() // 🔹 SwiftUI とのデータ共有用
     
     // 保存された商品データを管理する配列
     var productDataArray: [[String: Any]] = []
@@ -24,8 +27,26 @@ class HomeViewController: UIViewController {
     // 商品を削除するためのゴミ箱ボタン
     @IBOutlet var trashButton: UIButton!
     
+    private var cancellables = Set<AnyCancellable>() // Combine で監視解除用
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // SwiftUI の HomeView をホスティング
+        let homeView = HomeView(viewModel: viewModel)
+        let hostingController = UIHostingController(rootView: homeView)
+        
+        addChild(hostingController)
+        hostingController.view.frame = view.bounds
+        hostingController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(hostingController.view)
+        hostingController.didMove(toParent: self)
+        
+        // 🔹 ViewModel を監視し、値が変更されたら処理
+        viewModel.$topSegmentIndex.sink { [weak self] newIndex in
+            guard let self = self else { return }
+            print("HomeVC で topSegmentIndex が更新: \(newIndex)")
+        }.store(in: &cancellables)
         
         // タブバーの高さを取得
         let tabBarHeight = tabBarController?.tabBar.frame.height ?? 0
@@ -33,21 +54,16 @@ class HomeViewController: UIViewController {
         // プラスボタンを生成してビューに追加
         plusButton = UIButton(type: .system)
         plusButton.setTitle("+", for: .normal)
-        plusButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
-        plusButton.setTitleColor(.black, for: .normal) // プラスの色を黒に変更
-        plusButton.backgroundColor = .clear // 背景を透明にする
-        plusButton.layer.cornerRadius = 15 // 角丸設定
-           plusButton.frame = CGRect(x: 16, y: 85, width: 60, height: 60) // 位置を固定
+        plusButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        plusButton.frame = CGRect(x: view.frame.width - 70, y: view.frame.height - tabBarHeight - 70, width: 60, height: 60)
+        plusButton.backgroundColor = .blue
+        plusButton.setTitleColor(.white, for: .normal)
+        plusButton.layer.cornerRadius = 30
         view.addSubview(plusButton)
         
         // plusButtonにアクションを追加
         plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
-        
-        
-        setupButtons()
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -92,61 +108,60 @@ class HomeViewController: UIViewController {
         if let savedData = saveData.array(forKey: "productData") as? [[String: Any]] {
             // 保存されている全ての商品データを読み込む
             productDataArray = savedData
-            print(productDataArray) // データが正しく読み込まれたか確認のために表示
         }
     }
     
-    func setupButtons() {
-        // タブバーの高さを取得
-        let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
-        
-        // ボタンの共通設定
-        let buttonSize: CGFloat = 100
-        let buttonCornerRadius: CGFloat = buttonSize / 2
-        let yOffset = self.view.frame.height - tabBarHeight - 150
-        
-        // キッチン用ボタン
-        kitchenButton = UIButton(type: .system)
-        kitchenButton.frame = CGRect(x: 50, y: yOffset, width: buttonSize, height: buttonSize)
-        kitchenButton.configuration = createButtonConfiguration(imageName: "onigiriIcon", title: "食品", backgroundColor: UIColor(red: 1.0, green: 0.85, blue: 0.7, alpha: 1.0))
-        kitchenButton.layer.cornerRadius = buttonCornerRadius
-        kitchenButton.clipsToBounds = true
-        kitchenButton.addTarget(self, action: #selector(kitchenButtonTapped), for: .touchUpInside)
-        self.view.addSubview(kitchenButton)
-        
-        // 緊急キット用ボタン
-        emergencyButton = UIButton(type: .system)
-        emergencyButton.frame = CGRect(x: self.view.frame.width - 150, y: yOffset, width: buttonSize, height: buttonSize)
-        emergencyButton.configuration = createButtonConfiguration(imageName: "baketuIcon", title: "日用品", backgroundColor: UIColor(red: 0.7, green: 0.9, blue: 1.0, alpha: 1.0))
-        emergencyButton.layer.cornerRadius = buttonCornerRadius
-        emergencyButton.clipsToBounds = true
-        emergencyButton.addTarget(self, action: #selector(emergencyButtonTapped), for: .touchUpInside)
-        self.view.addSubview(emergencyButton)
-    }
-    
-    
-    // ボタンの設定を生成するヘルパーメソッド
-    private func createButtonConfiguration(imageName: String, title: String, backgroundColor: UIColor) -> UIButton.Configuration {
-        var configuration = UIButton.Configuration.filled()
-        configuration.image = UIImage(named: imageName)
-        configuration.imagePlacement = .top // 画像を上部に配置
-        configuration.imagePadding = 0 // 画像とテキストの間に余白を設定
-        configuration.title = title
-        configuration.baseForegroundColor = .black // テキストの色
-        configuration.baseBackgroundColor = backgroundColor // 背景色を設定
-        configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        return configuration
-    }
-    
-    // キッチンボタンをタップしたときの処理
-    @objc func kitchenButtonTapped() {
-        performSegue(withIdentifier: "toKitchenView", sender: self) // キッチン画面に移動
-    }
-    
-    // 緊急キットボタンをタップしたときの処理
-    @objc func emergencyButtonTapped() {
-        performSegue(withIdentifier: "toEmergencyView", sender: self) // 緊急キット画面に移動
-    }
+    //MARK: Swift UIへ移行（ルーレットを使った表示に変更）
+    //    func setupButtons() {
+    //        // タブバーの高さを取得
+    //        let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
+    //
+    //        // ボタンの共通設定
+    //        let buttonSize: CGFloat = 100
+    //        let buttonCornerRadius: CGFloat = buttonSize / 2
+    //        let yOffset = self.view.frame.height - tabBarHeight - 150
+    //
+    //        // キッチン用ボタン
+    //        kitchenButton = UIButton(type: .system)
+    //        kitchenButton.frame = CGRect(x: 50, y: yOffset, width: buttonSize, height: buttonSize)
+    //        kitchenButton.configuration = createButtonConfiguration(imageName: "onigiriIcon", title: "食品", backgroundColor: UIColor(red: 1.0, green: 0.85, blue: 0.7, alpha: 1.0))
+    //        kitchenButton.layer.cornerRadius = buttonCornerRadius
+    //        kitchenButton.clipsToBounds = true
+    //        kitchenButton.addTarget(self, action: #selector(kitchenButtonTapped), for: .touchUpInside)
+    //        self.view.addSubview(kitchenButton)
+    //
+    //        // 緊急キット用ボタン
+    //        emergencyButton = UIButton(type: .system)
+    //        emergencyButton.frame = CGRect(x: self.view.frame.width - 150, y: yOffset, width: buttonSize, height: buttonSize)
+    //        emergencyButton.configuration = createButtonConfiguration(imageName: "baketuIcon", title: "日用品", backgroundColor: UIColor(red: 0.7, green: 0.9, blue: 1.0, alpha: 1.0))
+    //        emergencyButton.layer.cornerRadius = buttonCornerRadius
+    //        emergencyButton.clipsToBounds = true
+    //        emergencyButton.addTarget(self, action: #selector(emergencyButtonTapped), for: .touchUpInside)
+    //        self.view.addSubview(emergencyButton)
+    //    }
+    //
+    //    // ボタンの設定を生成するヘルパーメソッド
+    //    private func createButtonConfiguration(imageName: String, title: String, backgroundColor: UIColor) -> UIButton.Configuration {
+    //        var configuration = UIButton.Configuration.filled()
+    //        configuration.image = UIImage(named: imageName)
+    //        configuration.imagePlacement = .top // 画像を上部に配置
+    //        configuration.imagePadding = 0 // 画像とテキストの間に余白を設定
+    //        configuration.title = title
+    //        configuration.baseForegroundColor = .black // テキストの色
+    //        configuration.baseBackgroundColor = backgroundColor // 背景色を設定
+    //        configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+    //        return configuration
+    //    }
+    //
+    //    // キッチンボタンをタップしたときの処理
+    //    @objc func kitchenButtonTapped() {
+    //        performSegue(withIdentifier: "toKitchenView", sender: self) // キッチン画面に移動
+    //    }
+    //
+    //    // 緊急キットボタンをタップしたときの処理
+    //    @objc func emergencyButtonTapped() {
+    //        performSegue(withIdentifier: "toEmergencyView", sender: self) // 緊急キット画面に移動
+    //    }
     
     // plusButtonがタップされたときの処理
     @objc func plusButtonTapped() {
@@ -164,7 +179,6 @@ class HomeViewController: UIViewController {
             productButton.removeFromSuperview() // アニメーションが終わったらボタンを画面から削除
         })
     }
-    
     
     // 商品データを別のビューに登録するメソッド
     func registerProductToView(productData: [String: Any], forView view: String) {
@@ -373,34 +387,76 @@ class HomeViewController: UIViewController {
             let feedbackGenerator = UISelectionFeedbackGenerator()
             feedbackGenerator.prepare()
             
-            if kitchenButton.frame.contains(productButton.center) ||
-                emergencyButton.frame.contains(productButton.center) ||
-                trashButton.frame.contains(productButton.center) {
-                feedbackGenerator.selectionChanged()
+            let buttonCenter = productButton.center
+            let rouletteCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height * 3 / 4)
+            let rouletteRadius = self.view.frame.width / 2
+            
+            if isButtonInsideSegment(buttonCenter: buttonCenter, rouletteCenter: rouletteCenter, radius: rouletteRadius) {
+                print("ボタンがセグメント \(viewModel.topSegmentIndex) に重なった")
             }
+            
         case .ended, .cancelled:
-            restartFloatingAnimation(for: productButton) // ドラッグが終わったらアニメーションを再開
+            
+            let buttonCenter = productButton.center
+            let rouletteCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height * 3 / 4)
+            let rouletteRadius = self.view.frame.width / 2
+            
+            if isButtonInsideSegment(buttonCenter: buttonCenter, rouletteCenter: rouletteCenter, radius: rouletteRadius) {
+                print("ボタンがセグメント \(viewModel.topSegmentIndex) に重なって、完了")
+                // アラートの表示
+                let alert = UIAlertController(title: "完了", message: "商品を移動させました！", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                alert.addAction(okAction)
+                present(alert, animated: true)
+            }
             
             // ボタンがどの領域にドロップされたかを確認して処理を行う
-            if kitchenButton.frame.contains(productButton.center) {
-                animateImageDrop(to: kitchenButton, productButton: productButton)
-                productDataArray[productButton.tag]["currentPage"] = "KitchenVC"
-                saveData.set(productDataArray, forKey: "productData")
-                registerProductToView(productData: productDataArray[productButton.tag], forView: "kitchenView")
-            } else if emergencyButton.frame.contains(productButton.center) {
-                animateImageDrop(to: emergencyButton, productButton: productButton)
-                productDataArray[productButton.tag]["currentPage"] = "EmergencyVC"
-                saveData.set(productDataArray, forKey: "productData")
-                registerProductToView(productData: productDataArray[productButton.tag], forView: "emergencyView")
-            } else if trashButton.frame.contains(productButton.center) {
-                confirmDeletion(for: productButton)
-            }
+            //            if kitchenButton.frame.contains(productButton.center) {
+            //                animateImageDrop(to: kitchenButton, productButton: productButton)
+            //                productDataArray[productButton.tag]["currentPage"] = "KitchenVC"
+            //                saveData.set(productDataArray, forKey: "productData")
+            //                registerProductToView(productData: productDataArray[productButton.tag], forView: "kitchenView")
+            //            } else if emergencyButton.frame.contains(productButton.center) {
+            //                animateImageDrop(to: emergencyButton, productButton: productButton)
+            //                productDataArray[productButton.tag]["currentPage"] = "EmergencyVC"
+            //                saveData.set(productDataArray, forKey: "productData")
+            //                registerProductToView(productData: productDataArray[productButton.tag], forView: "emergencyView")
+            //            } else if trashButton.frame.contains(productButton.center) {
+            //                confirmDeletion(for: productButton)
+            //            }
+            
+            // ドラッグが終わったらアニメーションを再開
+            restartFloatingAnimation(for: productButton)
             
             // ドラッグが終了した時点でボタンの位置を保存
             saveButtonPositions()
         default:
             break
         }
+    }
+    
+    /// **ボタンが現在のセグメントに入っているか判定**
+    func isButtonInsideSegment(buttonCenter: CGPoint, rouletteCenter: CGPoint, radius: CGFloat) -> Bool {
+        let centerAngle: CGFloat = 60.0 // 1 セグメントの角度
+        let startAngle: CGFloat = CGFloat(viewModel.topSegmentIndex) * centerAngle
+        let endAngle: CGFloat = startAngle + centerAngle
+        
+        let dx = buttonCenter.x - rouletteCenter.x
+        let dy = buttonCenter.y - rouletteCenter.y
+        let distance = sqrt(dx * dx + dy * dy)
+        
+        // 半径範囲内か判定
+        if distance > radius {
+            return false
+        }
+        
+        // 角度を計算
+        let buttonAngle = atan2(dy, dx) * 180 / .pi
+        let normalizedAngle = (buttonAngle >= 0 ? buttonAngle : (360 + buttonAngle))
+        
+        return normalizedAngle >= startAngle && normalizedAngle <= endAngle
     }
     
 }

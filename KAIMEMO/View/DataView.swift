@@ -17,14 +17,14 @@ struct DataView: View {
                         .font(.title)
                         .bold()
                     Spacer()
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.black)
+                   // Image(systemName: "star.fill")
+                   //     .foregroundColor(.black)
                 }
                 
                 // 商品画像
-                HStack {
-                    Image("coca_cola") // 画像をアセットに追加しておく
-                        .resizable()
+              //  HStack {
+              //      Image("coca_cola") // 画像をアセットに追加しておく
+              //          .resizable()
                         .frame(width: 80, height: 120)
                         .scaledToFit()
                     Spacer()
@@ -33,7 +33,7 @@ struct DataView: View {
                         // Yahooショッピングのリンク処理
                     }) {
                         HStack {
-                            Image(systemName: "link")
+                          //  Image(systemName: "link")
                             Text("Yahoo ショッピングで見る")
                         }
                         .foregroundColor(.black)
@@ -87,12 +87,12 @@ struct DataView: View {
                     Text("在庫")
                     HStack {
                         Button(action: { if stock > 0 { stock -= 1 } }) {
-                            Image(systemName: "minus.circle")
+                    //        Image(systemName: "minus.circle")
                         }
                         Text("\(stock)")
                             .frame(minWidth: 30)
                         Button(action: { stock += 1 }) {
-                            Image(systemName: "plus.circle")
+                      //      Image(systemName: "plus.circle")
                         }
                         Text("個")
                     }
@@ -120,7 +120,7 @@ struct DataView: View {
             .padding()
         }
     }
-}
+
 
 struct ShoppingMemoView_Previews: PreviewProvider {
     static var previews: some View {

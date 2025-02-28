@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AD5B19542D688EF600BD08FC /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B19532D688EF600BD08FC /* DataView.swift */; };
 		AD5B19582D68992400BD08FC /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B19572D68992400BD08FC /* CircleImage.swift */; };
+		AD5B195A2D71C2BF00BD08FC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B19592D71C2BE00BD08FC /* HomeView.swift */; };
+		AD5B195C2D71C33400BD08FC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B195B2D71C32500BD08FC /* HomeViewModel.swift */; };
 		AD635B3A2C413B3B008308B0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD635B392C413B3B008308B0 /* Product.swift */; };
 		AD683A1C2C1C4AE800EBE60B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD683A1B2C1C4AE800EBE60B /* HomeViewController.swift */; };
 		AD683A1E2C1C4B0100EBE60B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD683A1D2C1C4B0100EBE60B /* CameraViewController.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		AD5B19532D688EF600BD08FC /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		AD5B19572D68992400BD08FC /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		AD5B19592D71C2BE00BD08FC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AD5B195B2D71C32500BD08FC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AD635B392C413B3B008308B0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		AD683A1B2C1C4AE800EBE60B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AD683A1D2C1C4B0100EBE60B /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		ADCB61322CF9C7CA00654CF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD5B195B2D71C32500BD08FC /* HomeViewModel.swift */,
 				AD635B392C413B3B008308B0 /* Product.swift */,
 			);
 			path = Model;
@@ -138,6 +143,7 @@
 				ADA184A72C259BD6003F5B87 /* GoodsTableViewCell.xib */,
 				AD5B19532D688EF600BD08FC /* DataView.swift */,
 				AD5B19572D68992400BD08FC /* CircleImage.swift */,
+				AD5B19592D71C2BE00BD08FC /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,7 +341,9 @@
 				ADD68D532CA2E7650074E3CB /* NoticeListViewController.swift in Sources */,
 				ADD68D572CA43B2A0074E3CB /* NewCameraViewController.swift in Sources */,
 				AD5B19582D68992400BD08FC /* CircleImage.swift in Sources */,
+				AD5B195C2D71C33400BD08FC /* HomeViewModel.swift in Sources */,
 				ADD68D5D2CA43BA10074E3CB /* PowderRoomViewController.swift in Sources */,
+				AD5B195A2D71C2BF00BD08FC /* HomeView.swift in Sources */,
 				ADA184A52C2590E8003F5B87 /* CheckViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
