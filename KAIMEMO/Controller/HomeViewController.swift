@@ -111,58 +111,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-    //MARK: Swift UIへ移行（ルーレットを使った表示に変更）
-    //    func setupButtons() {
-    //        // タブバーの高さを取得
-    //        let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
-    //
-    //        // ボタンの共通設定
-    //        let buttonSize: CGFloat = 100
-    //        let buttonCornerRadius: CGFloat = buttonSize / 2
-    //        let yOffset = self.view.frame.height - tabBarHeight - 150
-    //
-    //        // キッチン用ボタン
-    //        kitchenButton = UIButton(type: .system)
-    //        kitchenButton.frame = CGRect(x: 50, y: yOffset, width: buttonSize, height: buttonSize)
-    //        kitchenButton.configuration = createButtonConfiguration(imageName: "onigiriIcon", title: "食品", backgroundColor: UIColor(red: 1.0, green: 0.85, blue: 0.7, alpha: 1.0))
-    //        kitchenButton.layer.cornerRadius = buttonCornerRadius
-    //        kitchenButton.clipsToBounds = true
-    //        kitchenButton.addTarget(self, action: #selector(kitchenButtonTapped), for: .touchUpInside)
-    //        self.view.addSubview(kitchenButton)
-    //
-    //        // 緊急キット用ボタン
-    //        emergencyButton = UIButton(type: .system)
-    //        emergencyButton.frame = CGRect(x: self.view.frame.width - 150, y: yOffset, width: buttonSize, height: buttonSize)
-    //        emergencyButton.configuration = createButtonConfiguration(imageName: "baketuIcon", title: "日用品", backgroundColor: UIColor(red: 0.7, green: 0.9, blue: 1.0, alpha: 1.0))
-    //        emergencyButton.layer.cornerRadius = buttonCornerRadius
-    //        emergencyButton.clipsToBounds = true
-    //        emergencyButton.addTarget(self, action: #selector(emergencyButtonTapped), for: .touchUpInside)
-    //        self.view.addSubview(emergencyButton)
-    //    }
-    //
-    //    // ボタンの設定を生成するヘルパーメソッド
-    //    private func createButtonConfiguration(imageName: String, title: String, backgroundColor: UIColor) -> UIButton.Configuration {
-    //        var configuration = UIButton.Configuration.filled()
-    //        configuration.image = UIImage(named: imageName)
-    //        configuration.imagePlacement = .top // 画像を上部に配置
-    //        configuration.imagePadding = 0 // 画像とテキストの間に余白を設定
-    //        configuration.title = title
-    //        configuration.baseForegroundColor = .black // テキストの色
-    //        configuration.baseBackgroundColor = backgroundColor // 背景色を設定
-    //        configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-    //        return configuration
-    //    }
-    //
-    //    // キッチンボタンをタップしたときの処理
-    //    @objc func kitchenButtonTapped() {
-    //        performSegue(withIdentifier: "toKitchenView", sender: self) // キッチン画面に移動
-    //    }
-    //
-    //    // 緊急キットボタンをタップしたときの処理
-    //    @objc func emergencyButtonTapped() {
-    //        performSegue(withIdentifier: "toEmergencyView", sender: self) // 緊急キット画面に移動
-    //    }
-    
     // plusButtonがタップされたときの処理
     @objc func plusButtonTapped() {
         // Storyboard上で"toNewCameraView"というIDのSegueを作成しておく
